@@ -2,15 +2,14 @@ package com.epl.blog.controlles;
 
 import com.epl.blog.models.Article;
 import com.epl.blog.repo.ArticleRepository;
+import com.epl.blog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -18,7 +17,10 @@ import java.util.Optional;
 public class BlogController {
 
     @Autowired
-    private ArticleRepository articleRepository;
+    ArticleRepository articleRepository;
+
+
+
 
     @GetMapping("/blog")
     public String blogMain(Model model){
@@ -82,6 +84,13 @@ public class BlogController {
         articleRepository.delete(article);
         return "redirect:/blog";
     }
+
+   /* @GetMapping(value = "/blog")
+    public List<Article> getAllArticles(){
+        return articleService.getAllArticles();
+
+    }*/
+
 
 
 }
