@@ -2,14 +2,12 @@ package com.epl.blog.controlles;
 
 import com.epl.blog.models.Article;
 import com.epl.blog.repo.ArticleRepository;
-import com.epl.blog.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 
@@ -18,9 +16,6 @@ public class BlogController {
 
     @Autowired
     ArticleRepository articleRepository;
-
-
-
 
     @GetMapping("/blog")
     public String blogMain(Model model){
