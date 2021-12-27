@@ -32,14 +32,6 @@ public class MainController {
         return "home";
     }
 
-  /*  @GetMapping("/")
-    public String futureGame (Model model) {
-        Iterable<FutureGame> futureGames = futureGameRepository.findAll();
-        model.addAttribute("futureGames", futureGames);
-        return "home";
-    }
-
-*/
     @GetMapping("/standings")
     public String standings(Model model) {
     Iterable<Standings> standings = standingsRepository.findAll();
