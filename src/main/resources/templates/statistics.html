@@ -13,25 +13,33 @@
       <div class="col-md-50 px-0">
         <div class = "container-center">
         <div class="col-25 text-center">
-        <h1 class="display-4 fst-italic">Турнирная таблица</h1>
+        <h1 class="display-4 fst-italic">Cтатистика команд</h1>
         <table class="table text-white">
            <thead>
           <tr>
-            <th>Tур</th>
-            <th>Дата и время матча</th>
+            <th>№</th>
             <th>Команда</th>
-            <th>Счет</th>
-            <th>Команда</th>
+            <th>Игры</th>
+            <th>Победа</th>
+            <th>Ничья</th>
+            <th>Проигрыш</th>
+            <th>Мячи</th>
+            <th>Очки</th>
+            <th>% очков</th>
           </tr>
           </thead>
           <tbody>
-          <div th:each="el : ${standings}">
+          <div th:each="el : ${statistics}">
             <tr>
-            <td th:text="${el.tour}"/>
-            <td th:text="${el.dateTime}"/>
-            <td th:text="${el.firstTeam}"/>
-            <td th:text="${el.gameScore}"/>
-            <td th:text="${el.secondTeam}"/>
+            <td th:text="${el.place}"/>
+            <td th:text="${el.team}"/>
+            <td th:text="${el.game}"/>
+            <td th:text="${el.win}"/>
+            <td th:text="${el.draw}"/>
+            <td th:text="${el.losing}"/>
+            <td th:text="${el.balls}"/>
+            <td th:text="${el.points}"/>
+            <td th:text="${el.percentagePoints}"/>
             </tr>
           </div>
           </tbody>
@@ -41,6 +49,7 @@
     </div>
   </div>
   </div>
+
 </div>
 </body>
 </html>

@@ -7,20 +7,45 @@
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
-<div class="container">
-    <header th:insert="blocks/header :: header"></header>
-<main class="container">
+<header th:insert="blocks/header :: header"></header>
+<div class="container mt-5">
     <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
-        <div class="col-md-6 px-0">
-            <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
-            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-            <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+    <div class="col-md-20 px-0">
+        <h1 class="display-4 fst-italic">Приветствую в блоге с аналитикой по АПЛ!</h1>
+        <p class="lead my-3">На главной странице блога размещена информация о будущих матчах и тех, что подлежат переносу.
+            В блоге представлена турнирная таблица с расписанием матчей, статистика команд, подобрка новостей об Английской Премьер-лиге
+            с возможностью редактирования и добавления новых.</p>
+    </div>
+    </div>
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <div class="col-md-50 px-0">
+            <div class = "container-center">
+                <div class="col-25 text">
+                    <h2 class="display-4 fst-italic"> Планируемые и перенесенные матчи</h2>
+                    <table class="table text-white">
+                        <thead>
+                        <tr>
+                            <th>   </th>
+                            <th>    </th>
+                            <th>    </th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <div th:each="el : ${futureGames}">
+                        <tr>
+                            <td th:text="${el.dateTime}"/>
+                            <td th:text="${el.firstTeam}"/>
+                            <td th:text="${el.secondTeam}"/>
+                        </tr>
+                        </div>
+                        <tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
-</main>
-
-    <div th:insert="blocks/footer :: footer"></div>
-
+</div>
 </div>
 </body>
 </html>
