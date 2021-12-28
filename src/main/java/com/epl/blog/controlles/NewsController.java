@@ -12,7 +12,7 @@ import java.util.Optional;
 
 
 @Controller
-public class BlogController {
+public class NewsController {
 
     @Autowired
     ArticleRepository articleRepository;
@@ -79,13 +79,4 @@ public class BlogController {
         articleRepository.delete(article);
         return "redirect:/blog";
     }
-
-   /* @GetMapping(value = "/blog")
-    public List<Article> getAllArticles(){
-        return articleService.getAllArticles();
-
-    }*/
-
-
-
 }
